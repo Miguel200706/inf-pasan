@@ -1,0 +1,320 @@
+/* FUENTES PERSONALIZADAS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    /* Modo claro - Azul oscuro profesional */
+    --primary-color: #1e3a8a;
+    --secondary-color: #2563eb;
+    --text-color: #1f2937;
+    --bg-color: #f8fafc;
+    --header-bg: #1e3a8a;
+    --header-text: #ffffff;
+    --btn-bg: #2564eb93;
+    --btn-text: #ffffff;
+    --text-box-bg: rgba(255, 255, 255, 0.9);
+    --shadow-color: rgba(30, 58, 138, 0.1);
+    --accent-color: #3b82f6;
+}
+
+.dark-mode {
+    /* Modo oscuro - Azul noche más intenso */
+    --primary-color: #0f172a;
+    --secondary-color: #1e40af;
+    --text-color: #e2e8f0;
+    --bg-color: #0f172a;
+    --header-bg: #0f172a;
+    --header-text: #ffffff;
+    --btn-bg: #1e40af93;
+    --btn-text: #ffffff;
+    --text-box-bg: rgba(15, 23, 42, 0.8);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --accent-color: #60a5fa;
+}
+
+/* ESTRUCTURA BASE */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.4s ease;
+    line-height: 1.6;
+}
+
+/* HEADER CON TÍTULOS CENTRADOS */
+.main-header {
+    position: relative;
+    height: 100vh;
+}
+
+.header-bar {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    display: flex;
+    justify-content: center; /* Cambiado a center */
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    height: 80px;
+    box-sizing: border-box;
+}
+
+.report-title, .chapter-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-align: center; /* Título centrado */
+    width: 100%; /* Ocupa todo el ancho */
+    padding: 0 60px; /* Espacio para los botones */
+}
+
+/* BOTONES EN HEADER (tema y cerrar) */
+.theme-btn, .close-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--header-text);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.theme-btn {
+    right: 20px;
+}
+
+.close-btn {
+    right: 60px; /* Espacio para el botón de tema */
+}
+
+.theme-btn:hover {
+    transform: translateY(-50%) rotate(15deg) scale(1.1);
+}
+
+/* MENÚ PRINCIPAL CON FONDO DE IMAGEN */
+.main-menu {
+    height: calc(100vh - 80px);
+    background-image: url('./imagenes/Fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.menu-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* BOTONES DE CAPÍTULOS */
+.chapter-buttons-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.chapter-btn {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    padding: 1.1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    width: 100%;
+    letter-spacing: 0.5px;
+}
+
+.chapter-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+/* CONTENIDO DE CAPÍTULOS */
+.chapter-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-bottom: 100px;
+}
+
+/* CAJAS DE TEXTO */
+.text-box {
+    background-color: var(--text-box-bg);
+    border-radius: 10px;
+    padding: 1.8rem;
+    margin: 1.2rem 0;
+    width: 100%;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+.text-box p {
+    margin: 0;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.text-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px var(--shadow-color);
+}
+
+/* TÍTULOS DE SECCIÓN CENTRADOS */
+.chapter-content h2 {
+    text-align: center;
+    margin: 1.8rem 0;
+    color: var(--primary-color);
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.dark-mode .chapter-content h2 {
+    color: var(--header-text);
+}
+
+.chapter-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    border-radius: 3px;
+}
+
+/* BOTONES DE NAVEGACIÓN */
+.chapter-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+}
+
+.nav-btn {
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    min-width: 160px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.prev-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.next-btn {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .report-title, .chapter-header h1 {
+        font-size: 1.4rem;
+        padding: 0 50px;
+    }
+    
+    .chapter-buttons-vertical {
+        width: 90%;
+    }
+    
+    .chapter-btn {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .chapter-content {
+        padding: 1.5rem;
+    }
+    
+    .text-box {
+        padding: 1.2rem;
+    }
+    
+    .chapter-navigation {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .nav-btn {
+        width: 100%;
+        max-width: 220px;
+    }
+    
+    .theme-btn, .close-btn {
+        font-size: 1.1rem;
+    }
+    
+    .close-btn {
+        right: 50px;
+    }
+}
+
+@media (max-height: 700px) {
+    .chapter-buttons-vertical {
+        gap: 1rem;
+    }
+    
+    .chapter-btn {
+        padding: 0.9rem 1.2rem;
+    }
+    .content-image {
+    background-color: var(--text-box-bg);
+    border-radius: 10px;
+    padding: 1.8rem;
+    margin: 1.2rem 0;
+    width: 100%;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+.content-image:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px var(--shadow-color);
+}
+}
