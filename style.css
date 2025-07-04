@@ -1,5 +1,4 @@
-/* FUENTES PERSONALIZADAS */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap');
 
 :root {
     /* Modo claro - Azul oscuro profesional */
@@ -33,7 +32,7 @@
 
 /* ESTRUCTURA BASE */
 body {
-    font-family: 'Poppins', sans-serif;
+     font-family: 'EB Garamond', serif;
     margin: 0;
     padding: 0;
     background-color: var(--bg-color);
@@ -317,4 +316,189 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 6px 15px var(--shadow-color);
 }
+/* Contenedor de presentación */
+.presentacion-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+/* Botón de presentación */
+.presentacion-btn {
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    background-color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.presentacion-btn i {
+    transition: transform 0.3s ease;
+}
+
+.presentacion-btn.active i {
+    transform: rotate(180deg);
+}
+
+/* Contenido desplegable */
+.presentacion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    width: 100%;
+}
+
+.presentacion-content.show {
+    max-height: 3000px; /* Ajusta según tu contenido */
+}
+
+/* Ajustes para elementos dentro del despliegue */
+.presentacion-content .text-box,
+.presentacion-content .content-image {
+    margin: 1.5rem auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.presentacion-content.show .text-box,
+.presentacion-content.show .content-image {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Retrasos para animación escalonada */
+.presentacion-content.show .text-box:nth-child(1) {
+    transition-delay: 0.2s;
+}
+.presentacion-content.show .content-image:nth-child(2) {
+    transition-delay: 0.4s;
+}
+.presentacion-content.show .text-box:nth-child(3) {
+    transition-delay: 0.6s;
+}
+.legal-text {
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: justify;
+}
+
+.legal-text p {
+    margin-bottom: 1.5em;
+}
+
+.legal-text b {
+    font-weight: bold;
+    color: #1e3a8a;
+}
+
+.article-title {
+    font-weight: bold;
+    color: #1e3a8a;
+    margin: 1.5em 0 0.5em 0;
+    font-size: 1.1em;
+}
+
+.article-list {
+    margin-left: 20px;
+    padding-left: 15px;
+}
+
+.article-list li {
+    margin-bottom: 0.5em;
+    list-style-type: decimal;
+}
+
+.article-sublist {
+    margin-left: 20px;
+    padding-left: 15px;
+}
+
+.article-sublist li {
+    margin-bottom: 0.3em;
+    list-style-type: decimal;
+}
+
+.internship-text {
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.department-title {
+    font-weight: bold;
+    color: #1e3a8a;
+    margin: 1.5em 0 0.5em 0;
+    font-size: 1.2em;
+     text-align: center;
+}
+
+.subsection-title {
+    font-weight: bold;
+    color: #1e3a8a;
+    margin: 1.2em 0 0.3em 0;
+    font-size: 1.1em;
+}
+
+.position-title {
+    font-weight: bold;
+    color: #2c5282;
+    margin: 1em 0 0.2em 0;
+}
+
+.activity-list {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 700px;
+    text-align: left;
+    list-style-type: none; /* Elimina los números/viñetas por defecto */
+}
+
+.activity-list li {
+    margin-bottom: 0.8em;
+    padding-left: 1em;
+    text-indent: -1em; /* Ajuste para alinear el punto con el texto */
+}
+
+.activity-list li:before {
+    content: "•"; /* Solo un punto */
+    color: #1e3a8a;
+    font-weight: bold;
+    padding-right: 0.5em;
+}
+
+.internship-text p {
+    text-align: center;
+    margin: 0 auto 1em;
+    max-width: 700px;
+}
+
+.chapter-title {
+    font-weight: bold;
+    color: #1e3a8a;
+    margin: 1.5em 0 0.5em 0;
+    font-size: 1.2em;
+     text-align: center;
+}
+
+.cuadre  {
+    background-color: var(--text-box-bg);
+    border-radius: 10px;
+    padding: 1.8rem;
+    margin: 1.2rem 0;
+    width: 95%;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
 }

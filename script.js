@@ -98,4 +98,25 @@ document.querySelectorAll('a, button').forEach(link => {
             }, 500);
         }
     });
+    document.addEventListener('DOMContentLoaded', function() {
+    const presentacionBtn = document.querySelector('.presentacion-btn');
+    const presentacionContent = document.querySelector('.presentacion-content');
+    
+    if (presentacionBtn && presentacionContent) {
+        presentacionBtn.addEventListener('click', function() {
+            // Alternar la clase 'active' en el botón
+            this.classList.toggle('active');
+            
+            // Alternar la clase 'show' en el contenido
+            presentacionContent.classList.toggle('show');
+            
+            // Cambiar el icono y texto según el estado
+            if (presentacionContent.classList.contains('show')) {
+                this.innerHTML = '<i class="fas fa-arrow-up"></i> Ocultar Presentación';
+            } else {
+                this.innerHTML = '<i class="fas fa-arrow-down"></i> Ver Presentación';
+            }
+        });
+    }
+});
 });
